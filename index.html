@@ -128,6 +128,8 @@
     </div>
     <script>
       const users = [];
+      let user;
+      let properties;
       const displayUsers = (users) => {
         Object.keys(users).forEach(key =>{
             let selectBox = document.querySelector('.select-text');
@@ -170,8 +172,11 @@
         return users.find( searchText => searchText.id === userId );
       }
       
-      const displaySelectedUser = () => {
-      
+      const displaySelectedUser = (event) => {
+        if(event){
+          user = getSelectedUser(event.target.value)
+          properties = Object.keys(user)
+        }
       }
       
       const letsCalculateBMI = () => 
@@ -181,16 +186,14 @@
       
       const powerupTheUI = () => {
         let selectBox = document.querySelector('.select-text');
-        //selectBox.onchange = displaySelectedUser();
-        selectBox.addEventListener("change",displaySelectedUser
-);
+        selectBox.addEventListener("change",displaySelectedUser);
         let button = document.querySelector('#oracle');
         button.addEventListener("click",letsCalculateBMI);
         
       }
       
        startApp();
-    //    getSelectedUser(';ddlkkd')
+    displaySelectedUser();
     </script>
   </body>
 </html>
