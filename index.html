@@ -173,10 +173,8 @@
       }
       
       const displaySelectedUser = (event) => {
-        if(event){
-          user = getSelectedUser(event.target.value)
-          properties = Object.keys(user)
-        }
+        user = getSelectedUser(event.target.value)
+        properties = Object.keys(user)
       }
       
       const letsCalculateBMI = () => 
@@ -192,8 +190,7 @@
         
       }
       
-       startApp();
-    displaySelectedUser();
+      startApp();
     </script>
   </body>
 </html>
