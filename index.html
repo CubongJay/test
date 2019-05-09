@@ -131,14 +131,15 @@
       let user;
       let properties;
       const displayUsers = (users) => {
-        Object.keys(users).forEach(key =>{
-            let selectBox = document.querySelector('.select-text');
-            let option = document.createElement('option');
-            option.appendChild(document.createTextNode(users[key].name))
-            option.value = users[key].id
 
-            selectBox.appendChild(option)
-        })     
+        users.forEach(function(value, key){
+          let selectBox = document.querySelector('.select-text');
+          let option = document.createElement('option');
+          option.appendChild(document.createTextNode(value.name))
+          option.value = value.id
+
+          selectBox.appendChild(option)
+        })
       }
 
       const fetchAndDisplayUsers = () => {
